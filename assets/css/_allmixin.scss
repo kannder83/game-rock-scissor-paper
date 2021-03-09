@@ -1,0 +1,15 @@
+// -------------------------- Mixin
+
+@mixin allcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin testBorder {
+  border: 1px solid red;
+}
+
+@mixin fontSize($size) {
+  font-size: $size;
+}

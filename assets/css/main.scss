@@ -1,0 +1,129 @@
+/*
+=============================================
+=============    Import         =============
+===================================|=========
+*/
+@import "./variables";
+@import "./allmixin";
+
+/*
+=============================================
+=============    CSS Principal  =============
+===================================|=========
+*/
+
+// @include testBorder;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $ppa-fonts;
+}
+
+.back-container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    to top,
+    $ppal-background-color,
+    $sec-background-color
+  );
+  @include allcenter;
+}
+
+.main {
+  width: 100%;
+  height: 80vh;
+
+  @include allcenter;
+  .box-game {
+    width: 300px;
+    min-height: 200px;
+    border-radius: 10px;
+    background: linear-gradient(white, rgba(255, 255, 255, 0.5));
+    box-shadow: $initial-shadow;
+    display: grid;
+    padding: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    .box-game_title {
+      height: 60px;
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      @include fontSize(12px);
+      span {
+        font-weight: bold;
+        @include fontSize(14px);
+      }
+    }
+    .box-game_icons {
+      height: 100px;
+      grid-column: 1 / 4;
+      grid-row: 2 / 3;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      span {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: $sec-background-color;
+        color: $color-solid-black;
+        font-size: 45px;
+        @include allcenter;
+      }
+    }
+    .box-game_choice {
+      height: 50px;
+      grid-column: 1 / 4;
+      grid-row: 3 / 4;
+      @include fontSize(14px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      span {
+        font-weight: bold;
+        @include fontSize(16px);
+      }
+    }
+    .box-game_info {
+      height: 50px;
+      grid-column: 1 / 4;
+      grid-row: 4 / 5;
+      @include allcenter;
+      @include fontSize(18px);
+    }
+  }
+}
+
+// ------------------------- Mensajes
+.win {
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 6px;
+  background: $color-win;
+  animation: reflectEffect 2s infinite;
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes reflectEffect {
+  100% {
+    transition: 1s;
+    background: linear-gradient(
+      -45deg,
+      #000000 45%,
+      #fff 48%,
+      #fff 50%,
+      #000 50%
+    );
+  }
+}
