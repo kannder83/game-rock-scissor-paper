@@ -2,6 +2,9 @@
 
 const result = document.getElementById("box-game_result");
 
+let computerScore = 0;
+let userScore = 0;
+
 //Objet game
 let choices_object = {
   rock: {
@@ -20,6 +23,7 @@ let choices_object = {
     paper: "win",
   },
 };
+
 //Event Listener
 document.getElementById("hand-rock").addEventListener("click", () => {
   userClickOn("rock");
@@ -43,12 +47,14 @@ function userClickOn(select) {
 
   switch (choices_object[select][computer_choice]) {
     case "win":
+      userScore++;
       whoWin("You Win!!");
       break;
     case "draw":
       whoWin("It's draw");
       break;
     case "lose":
+      computerScore++;
       whoWin("You lose");
       break;
   }
@@ -57,6 +63,8 @@ function userClickOn(select) {
 
 function whoWin(theWinnerIs) {
   document.getElementById("result").innerHTML = theWinnerIs;
+  document.getElementById("computer_score").innerHTML = computerScore;
+  document.getElementById("user_score").innerHTML = userScore;
 }
 
 function resultDecoration(show) {
