@@ -33,6 +33,7 @@ html {
     $sec-background-color
   );
   @include allcenter;
+  flex-direction: column;
 }
 
 .main {
