@@ -3,6 +3,17 @@
 =============    Import         =============
 ===================================|=========
 */
+@-webkit-keyframes reflectEffect {
+  100% {
+    background-position: -100% 0;
+  }
+}
+@keyframes reflectEffect {
+  100% {
+    background-position: -100% 0;
+  }
+}
+
 /*
 =============================================
 =============    CSS Principal  =============
@@ -113,13 +124,17 @@ html {
           align-items: center;
 }
 
-.main .box-game .box-game_icons span {
+.main .box-game .box-game_icons span,
+.main .box-game .box-game_icons button {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   background-color: #ffc511;
   color: #030303;
   font-size: 45px;
+  outline: none;
+  border: none;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -184,26 +199,32 @@ html {
   width: 60%;
   margin: 0 auto;
   border-radius: 6px;
-  background: #57d157;
+  background: linear-gradient(120deg, #57d157 30%, #eeeeee 38%, #eeeeee 40%, #57d157 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
   -webkit-animation: reflectEffect 2s infinite;
           animation: reflectEffect 2s infinite;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
 }
 
-@-webkit-keyframes reflectEffect {
-  100% {
-    -webkit-transition: 1s;
-    transition: 1s;
-    background: linear-gradient(-45deg, #000000 45%, #fff 48%, #fff 50%, #000 50%);
-  }
+.lose {
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 6px;
+  background: linear-gradient(120deg, #922222 30%, #eeeeee 38%, #eeeeee 40%, #922222 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  -webkit-animation: reflectEffect 2s infinite;
+          animation: reflectEffect 2s infinite;
 }
 
-@keyframes reflectEffect {
-  100% {
-    -webkit-transition: 1s;
-    transition: 1s;
-    background: linear-gradient(-45deg, #000000 45%, #fff 48%, #fff 50%, #000 50%);
-  }
+.draw {
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 6px;
+  background: linear-gradient(120deg, #b99c45 30%, #eeeeee 38%, #eeeeee 40%, #b99c45 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  -webkit-animation: reflectEffect 2s infinite;
+          animation: reflectEffect 2s infinite;
 }
 /*# sourceMappingURL=main.css.map */

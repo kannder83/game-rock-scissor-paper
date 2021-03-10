@@ -71,13 +71,17 @@ html {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      span {
+      span,
+      button {
         width: 80px;
         height: 80px;
         border-radius: 50%;
         background-color: $sec-background-color;
         color: $color-solid-black;
         font-size: 45px;
+        outline: none;
+        border: none;
+        cursor: pointer;
         @include allcenter;
       }
     }
@@ -107,23 +111,16 @@ html {
 
 // ------------------------- Mensajes
 .win {
-  width: 60%;
-  margin: 0 auto;
-  border-radius: 6px;
-  background: $color-win;
-  animation: reflectEffect 2s infinite;
-  transition: all 0.3s ease-in-out;
+  @include info_winner;
+  @include reflectEffect($color-win, $color-solid-white);
 }
 
-@keyframes reflectEffect {
-  100% {
-    transition: 1s;
-    background: linear-gradient(
-      -45deg,
-      #000000 45%,
-      #fff 48%,
-      #fff 50%,
-      #000 50%
-    );
-  }
+.lose {
+  @include info_winner;
+  @include reflectEffect($color-lose, $color-solid-white);
+}
+
+.draw {
+  @include info_winner;
+  @include reflectEffect($color-draw, $color-solid-white);
 }

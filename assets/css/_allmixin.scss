@@ -13,3 +13,30 @@
 @mixin fontSize($size) {
   font-size: $size;
 }
+
+@mixin reflectEffect($first-color, $second-color) {
+  background: linear-gradient(
+    120deg,
+    $first-color 30%,
+    $second-color 38%,
+    $second-color 40%,
+    $first-color 48%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: reflectEffect 2s infinite;
+}
+
+@mixin info_winner {
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+
+// ------------------- Animations
+
+@keyframes reflectEffect {
+  100% {
+    background-position: -100% 0;
+  }
+}

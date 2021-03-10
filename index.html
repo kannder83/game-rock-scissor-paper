@@ -23,24 +23,31 @@
       <main class="main">
         <section class="box-game">
           <div class="box-game_title">
-            <p>Computer: <span>1</span></p>
-            <p>User: <span>1</span></p>
+            <p>Computer: <span id="computer_score">0</span></p>
+            <p>User: <span id="user_score">0</span></p>
           </div>
           <div class="box-game_icons">
-            <span><i class="far fa-hand-rock"></i></span>
-            <span><i class="far fa-hand-paper"></i> </span>
-            <span><i class="far fa-hand-scissors"></i> </span>
+            <button id="hand-rock">
+              <i class="far fa-hand-rock" disable></i>
+            </button>
+            <button id="hand-paper">
+              <i class="far fa-hand-paper"></i>
+            </button>
+            <button id="hand-scissors">
+              <i class="far fa-hand-scissors"></i>
+            </button>
           </div>
           <div class="box-game_choice">
-            <p>User Choose: <span>XXX</span></p>
-            <p>Computer Choose: <span>YYY</span></p>
+            <p>User Choose: <span id="user_choice"></span></p>
+            <p>Computer Choose: <span id="computer_choice"></span></p>
           </div>
-          <div class="box-game_info win">
-            <p>You Win!!</p>
+          <div id="box-game_result" class="box-game_info">
+            <p id="result">-</p>
           </div>
         </section>
       </main>
       <footer class="footer"></footer>
     </div>
+    <script src="./assets/scripts/script.js"></script>
   </body>
 </html>
