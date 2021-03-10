@@ -128,7 +128,6 @@ html {
           align-items: center;
 }
 
-.main .box-game .box-game_icons span,
 .main .box-game .box-game_icons button {
   width: 80px;
   height: 80px;
@@ -148,6 +147,11 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.main .box-game .box-game_icons button:hover {
+  -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
 }
 
 .main .box-game .box-game_choice {

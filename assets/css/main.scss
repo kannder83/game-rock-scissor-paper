@@ -72,7 +72,6 @@ html {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      span,
       button {
         width: 80px;
         height: 80px;
@@ -84,6 +83,10 @@ html {
         border: none;
         cursor: pointer;
         @include allcenter;
+      }
+      button:hover {
+        //border: 2px $ppal-background-color solid;
+        box-shadow: $second-shadow;
       }
     }
     .box-game_choice {
